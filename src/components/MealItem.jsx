@@ -13,7 +13,7 @@ cartCtx.addItem(meal);
   return (
     <div className='meal-item'>
 <article>
-    <img src={`http://localhost:3000/${meal.image}`}/>
+    <img src={`${import.meta.env.VITE_API_URL}/${meal.image}`}/>
     <h3>{meal.name}</h3>
     <div className='meal-item-description'>
     <p className='meal-item-price'>

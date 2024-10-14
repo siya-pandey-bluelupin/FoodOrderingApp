@@ -7,6 +7,7 @@ import { UserProgressContext } from "../store/UserProgressContext";
 import Input from "./UI/Input";
 import useHttp from "../hooks/useHttp";
 import ErrorPage from "./ErrorPage";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const requestConfig={
     method:'POST',
@@ -23,7 +24,7 @@ export default function Checkout (){
      error,
      sendRequest,
      clearData
-    }= useHttp('http://localhost:3000/orders',requestConfig)
+    }= useHttp(`${apiUrl}/orders`,requestConfig)
  
   const cartTotal = cartCtx.items.reduce((totalPrice, item) => totalPrice + item.quantity * item.price, 0)
 

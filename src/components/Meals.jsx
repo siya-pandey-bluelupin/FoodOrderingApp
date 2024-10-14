@@ -10,7 +10,7 @@ const Meals = () => {
 
   const { data: loadedMeals,
     isLoading,
-    error } = useHttp('http://localhost:3000/meals', requestConfig, []);
+    error } = useHttp(`${import.meta.env.VITE_API_URL}/meals`, requestConfig, []);
   if (isLoading) {
     return <p className='center'>Fetching meals......</p>
   }
